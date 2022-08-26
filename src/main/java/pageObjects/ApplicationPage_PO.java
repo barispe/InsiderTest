@@ -1,10 +1,6 @@
 package pageObjects;
 
 import org.openqa.selenium.By;
-import org.testng.Assert;
-import utils.Global_Vars;
-
-import static io.netty.util.internal.SystemPropertyUtil.contains;
 
 public class ApplicationPage_PO extends Base_PO{
 
