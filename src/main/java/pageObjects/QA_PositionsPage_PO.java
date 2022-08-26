@@ -61,6 +61,7 @@ public class QA_PositionsPage_PO extends Base_PO{
         waitForWebElementAndClick(locations);
     }
     public void checkPositionAttributes(){
+        wait(2000);
         waitFor(positionTitle);
         listPosition = findElements(positionTitle);
         listDepartment = findElements(positionDepartment);
