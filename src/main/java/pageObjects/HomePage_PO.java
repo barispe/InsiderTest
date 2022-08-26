@@ -8,7 +8,7 @@ public class HomePage_PO extends Base_PO{
 
 
     public static By main = By.id("main-head");
-    public static By more = By.xpath("//span[contains(text(),'More')]FAIL TEST FOR SCREENSHOT METHOD");
+    public static By more = By.xpath("//span[contains(text(),'More')]");
     public static By careers = By.xpath("//h5[contains(text(),'Careers')]");
 
 
