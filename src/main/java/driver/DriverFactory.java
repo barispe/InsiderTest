@@ -24,16 +24,16 @@ public class DriverFactory {
         if (webDriver.get()== null){
             webDriver.set(createDriver());
         }
+
         return webDriver.get();
     }
 
     private static WebDriver createDriver(){
         WebDriver driver = null;
-
-
+        //get other driver
         switch (getBrowserType()){
             case "chrome" -> {
-                //Since driver is in the project, we are making sure that it is going to run in any windows machine that has Chrome Version 104.
+                //selecting drivers from project dir
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/driver/drivers/chromedriver.exe");
                 ChromeOptions chromeOptions = new ChromeOptions();
                 //choosing normal so Selenium WebDriver will wait for the entire page is loaded. We can use waitUntil between steps as well yet this is more efficient.
@@ -63,15 +63,16 @@ public class DriverFactory {
         properties.load(file);
         browserType = properties.getProperty("browser").toLowerCase().trim();
 
-    } catch (IOException ex){
+    }
+        catch (IOException ex){
             System.out.println(ex.getMessage());
         }
         return browserType;
     }
+
     public static void cleanupDriver(){
         getDriver().quit();
 
     }
-
 }
 

@@ -29,10 +29,9 @@ public class QA_PositionsPage_PO extends Base_PO{
     public QA_PositionsPage_PO(){
         super();
     }
-
-
+    
     public void navigateTo_Insider_QA(){
-        navigateTo_URL(Global_Vars.USE_INSIDER_URL + "careers/open-positions/?department=qualityassurance");
+        navigateTo_URL(Global_Vars.use_insider_url + "careers/open-positions/?department=qualityassurance");
     }
 
     public List<WebElement> checkResults(){
@@ -74,9 +73,6 @@ public class QA_PositionsPage_PO extends Base_PO{
             Assert.assertTrue(listLocation.get(i).getText().contains(Global_Vars.LOCATION), "wrong location" + listLocation);
         }
     }
-
-
-
 }
 
 

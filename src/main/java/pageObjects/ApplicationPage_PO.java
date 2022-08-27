@@ -13,7 +13,6 @@ public class ApplicationPage_PO extends Base_PO{
         super();
     }
 
-
     public static void verifyApplicationPageURL() {
         wait(4000);
         windowHandle();
@@ -25,16 +24,13 @@ public class ApplicationPage_PO extends Base_PO{
     public static void verifyJobTitle() {
         waitFor(jobTitle);
     }
-
     public static void verifyApplyButton() {
         waitFor(leverApplication1);
     }
     public static void applyJob(){
-
         scrollToElements(leverApplication2);
         waitFor(leverApplication2);
         waitForWebElementAndClick(leverApplication2);
-
     }
 
 }

@@ -44,8 +44,6 @@ public class Hooks {
         getDriver();
     }
 
-
-
     @AfterTest
     public void tearDown(){
         cleanupDriver();

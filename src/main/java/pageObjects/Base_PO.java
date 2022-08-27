@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import utils.Global_Vars;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -39,27 +38,22 @@ public class Base_PO {
 
 
     public void sendKeys(By by, String textToType){
-        //default wait is 10 seconds
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
-        //wait until element is to be clickable
         wait.until(ExpectedConditions.elementToBeClickable(by)).sendKeys((textToType));
     }
     public void sendKeys(WebElement element, String textToType){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.elementToBeClickable(element)).sendKeys((textToType));
     }
-
     public static void waitFor(By by){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-
 
     }
     public void waitFor(WebElement element){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-
     public static void waitForWebElementAndClick(By by){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
         wait.until(ExpectedConditions.elementToBeClickable(by)).click();
@@ -76,9 +70,8 @@ public class Base_PO {
 
     }
     public static void scrollToElements(By by) {
-
         ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView(true);", findElement(by));
-        //WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Global_Vars.DEFAULT_EXPLICIT_TIMEOUT));
+
 
     }
     public void moveToElement (By by) {
@@ -86,12 +79,12 @@ public class Base_PO {
         actionProvider.moveToElement(findElement(by)).build().perform();
     }
     public static List<WebElement> findElements(By by) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 1000);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return getDriver().findElements(by);
     }
     public static WebElement findElement(By by) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 1000);
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
         return getDriver().findElement(by);
     }

@@ -30,7 +30,7 @@ public class CareerPage_PO extends Base_PO{
     }
 
     public void navigateTo_InsidersCareerPage(){
-        navigateTo_URL(Global_Vars.USE_INSIDER_URL + "/careers/");
+        navigateTo_URL(Global_Vars.use_insider_url + "/careers/");
     }
 
     public static void checkIfCareerPageLoaded(){
@@ -47,10 +47,8 @@ public class CareerPage_PO extends Base_PO{
 
     }
     public static void checkCareerPageURL(){
-
-        Assert.assertEquals(getDriver().getCurrentUrl(),Global_Vars.USE_INSIDER_URL +  "careers/");
-
-
+        Assert.assertEquals(getDriver().getCurrentUrl(),Global_Vars.use_insider_url +  "careers/");
+        
     }
     public static void seeAllTeams(){
         waitFor(seeAllBtn);
@@ -58,14 +56,11 @@ public class CareerPage_PO extends Base_PO{
         waitForWebElementAndClick(seeAllBtn);
         waitFor(businessTitle);
         waitFor(securityTitle);
-
-
+        
     }
     public static void scrollToTeams(){
         scrollToElements(sales);
-
-
-
+        
     }
     public static void clickQA(){
         scrollToElements(QA_TeamTitle);
@@ -73,7 +68,5 @@ public class CareerPage_PO extends Base_PO{
         waitForWebElementAndClick(QA_TeamTitle);
 
     }
-
-
-
+    
 }
